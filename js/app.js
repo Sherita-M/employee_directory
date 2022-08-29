@@ -1,7 +1,7 @@
 // Global Variables
 let employees = [];
 const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`;
-const gridContainer = document.querySelector('.gridContainer');
+const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
@@ -44,7 +44,7 @@ gridContainer.innerHTML = employeeHTML;
 // Modal Information Function
 
 function displayModal(index) {
-	let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
+	let { name, dob, phone, email, location: {city, street, state, postcode}, picture } = employees[index];
 	
 	let date = new Date(dob.date);
 
@@ -56,22 +56,22 @@ function displayModal(index) {
 		<p class="address">${city}</p>
 		<hr />
 		<p>${phone}</p>
-		<p class="address">${street}, ${state} ${postcode}</p>
+		<p class="address">${street.number}, ${state.name} ${postcode}</p>
 		<p>Birthday: 
 ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
 	</div>
-	`;
+`;
 
 	overlay.classList.remove("hidden");
 	modalContainer.innerHTML = modalHTML;
 
-};
+}
 
 // Event listener for grid container
 
 gridContainer.addEventListener('click', e => {
 
-	// make sure the clikc is not on the gridContainer itself
+	// make sure the click is not on the gridContainer itself
 	if (e.target !== gridContainer) {
 		// select the card element based on its proximity to actual element clicked
 		const card = e.target.closest(".card");
