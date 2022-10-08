@@ -19,15 +19,20 @@ body {
 }
 
 .modal {
-	width: 375px;
+	width: 400px; /* previously 375px */
+	/* height: 545px; */
 	margin: 15% auto auto;
 	position: relative;
 	text-align: center;
 	background: #fff;
-	border: 1px solid #778;
-	border-radius: 5px;
+	border: 1px solid #EEEEEE;
+	border-radius: 10px;
 	padding: 30px 20px; 
 
+}
+
+.modal-content {
+	padding-top: 20px;
 }
 
 .modal-close {
@@ -35,7 +40,6 @@ body {
 	top: 5px;
 	right: 15px;
 	cursor: pointer;
-
 	border: none;
 	background-color: transparent;
 }
@@ -81,15 +85,37 @@ h1 {
 	flex-direction: column;
 	justify-content: center;
 	margin-left: 15px;
-	gap: 10px;
+	gap: 18px;
+}
+
+#text-container.text-container {
+	padding: 20px 0; 
+}
+
+img.avatar {
+	width: 175px;
+	height: 175px;
+	border-radius: 50%;
 }
 
 h2 {
 	font-weight: 700;
+	font-size: 20px; 
 }
 
 p.email, p.address {
 	font-weight: 300;
-	color: gray;
+	color: #8C9296;
 	font-size: 14px; 
+}
+
+p.modal-text {
+	font-weight: lighter;
+	color: #8C9296;
+}
+
+hr {
+	border: 1px solid #EEEEEE;
+	width: 100%;
+	margin: 30px 0;
 }
